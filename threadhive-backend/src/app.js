@@ -39,6 +39,9 @@ app.use(
   }),
 );
 
+// Health check
+app.get("/", (req, res) => res.json({ success: true, message: "ThreadHive API is running" }));
+
 // Routes
 app.use("/api/threads", threadRoutes);
 app.use("/api/subreddits", subredditRoutes);
